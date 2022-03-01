@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chocotScrapper</title>
+  <script src="{{font_kit}}" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/report_style.css') }}">
+</head>
+<body>
+  <section class="search-section">
+    <a href="/" class="home-button"><i class="fa-solid fa-house-chimney"></i></a>
+    <h1>Job Searching</h1>
+    <form action="/report" method="get" class="search-form">
+      <input type="text" placeholder="Search job" required name="word" />
+      <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+  </section>
+  <section>
+    <header class="result-head">
+      <h3 id="result-comment">
+        You are looking for {{search_word}} | {{job_num}} jobs
+      </h3>
+      <a href="/export?word={{search_word}}">
+        <i class="fa-solid fa-download"></i>
+        <span>csv</span>
+      </a>
+    </header>
+    <div class="band">
+      {% for job in jobs %}
+        <article class="card">
+          <div class="company-content">
+            {% if job.company_img %}
+              <div class="logo" style="background-image:url({{job.company_img}})"></div>
+            {% else %}
+              <div class="logo"></div>
+            {% endif %}
+            <div class="company-info">
+              <span class="company">{{job.company}}</span>
+              <br>
+              <span class="place"><i class="fa-solid fa-location-dot"></i> {{job.place}}</span>
+            </div>
+          </div>
+          <div class="job-content">
+            <h4>{{job.title}}</h4>
+            <a href="{{job.link}}">Apply</a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+</body>
+</html>

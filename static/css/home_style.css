@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  font-family: "Malgun Gothic", sans-serif, Arial;
+}
+
+.search-section {
+  background-color: #5EC5D9;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-image: url("/static/img/urban-3164183.svg");
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.search-section > h1 {
+  font-size: 5vw;
+  color: white;
+  margin: 5vw auto;
+}
+
+.highlight {
+  text-shadow: 2px 2px 1px gray;
+  color: #406882;
+}
+
+.search-form > input {
+  max-width: 600px;
+  width: 60%;
+  height: 50px;
+  border: 0;
+  border-radius: 25px;
+  outline: none;
+  font-size: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+  margin: .5em auto;
+  padding-left: 1%;
+  color: #444;  
+}
+
+.search-form > button {
+  position: relative;
+  top: 2px;
+  right: 1.9em;
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  padding: 0;
+  text-align: center;
+  color: #5D788C;
+}
+
+.search-form > button:hover {
+  color: rgba(93, 120, 140, .5);
+}
+
+#explanation {
+  text-align: center;
+  color: #5D788C;
+  font-weight: 600;
+  padding: 0 20%;
+}
+
+.recent-src-section > h2 {
+  color: #444;
+  padding: 0 5%;
+}
+
+#no-recent-src {
+  text-align: center;
+  margin: 1vw;
+  color: rgba(192, 192, 192, .9);
+}
+
+.band {
+  width: 90%;
+  max-width: 1920px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+}
+
+.key-link {
+  background: #5EC5D9;
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+  min-height: 100%;
+  position: relative;
+  top: 0;
+  transition: 0.2s;
+  border: 3px solid #4796A6;
+  border-radius: 20px;
+}
+
+.key-link:hover {
+  background-color: #4DA2B3;
+  top -2px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, .2);
+}
+
+@media screen and (min-width: 500px){
+  .band {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1000px){
+  .band {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

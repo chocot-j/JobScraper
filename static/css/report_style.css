@@ -1,0 +1,208 @@
+body {
+  margin: 0;
+}
+
+.band {
+  width: 90%;
+  max-width: 1920px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+}
+
+.card {
+  background: #fff;
+  text-decoration: none;
+  color: #444;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  justify-content: space-between;
+  position: relative;
+  top: 0;
+  transition: 0.2s;
+}
+
+.card:hover {
+  top -2px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, .2);
+}
+
+.company-content {
+  display: flex;
+}
+
+.company-info {
+  margin-top: 5px;
+}
+
+.company {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.place {
+  font-size: 14px;
+  color: #787878;
+  font-weight: 600;
+}
+
+.job-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.job-content > h4 {
+  margin: 0;
+  padding: 10px;
+}
+
+.job-content > a {
+  font-size: 17px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding-bottom: 2px;
+  width: 80px;
+  height: 24px;
+  border: 0;
+  border-radius: 20px;
+  border-bottom: 3px solid #4796A6;
+  background-color: #5EC5D9;
+  transition: 0.1s;
+  margin: 0 0 3px 4px;
+}
+
+.job-content > a:hover {
+  background: #4DA2B3;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 50%;
+  border: 2px solid #B2FAF6;
+  margin: 5px 15px 0 5px;
+}
+
+.search-section {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #5EC5D9;
+}
+
+.search-section > h1 {
+  font-size: 40px;
+  color: #fff;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+}
+
+.search-form > input {
+  max-width: 600px;
+  width: 60%;
+  height: 50px;
+  border: 0;
+  border-radius: 25px;
+  outline: none;
+  font-size: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+  margin: .5em auto;
+  padding-left: 1%;
+  color: #444;
+}
+
+.search-form > button {
+  position: relative;
+  top: 2px;
+  right: 1.9em;
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  padding: 0;
+  text-align: center;
+  color: #5D788C;
+}
+
+.search-form > button:hover {
+  color: rgba(93, 120, 140, .5);
+}
+
+.result-head {
+  display: flex;
+  padding: 0 5%;
+}
+
+.result-head > #result-comment {
+  margin-right: 15px;
+}
+
+.result-head > a {
+  font-size: 17px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding-bottom: 2px;
+  width: 80px;
+  height: 24px;
+  border: 0;
+  border-radius: 20px;
+  border-bottom: 3px solid #679939;
+  background-color: #8ACC4C;
+  transition: 0.1s;
+  margin: auto 0;
+  display: flex;
+  overflow: hidden;
+}
+
+.result-head > a:hover {
+  background: #78B342;
+}
+
+.fa-download {
+  display: inline-flex;
+  height: 100%;
+  padding: 4px 4px 4px 6px;
+  margin-right: 5px;
+  background-color: rgba(120, 179, 66, .8);
+}
+
+.home-button {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 10px 10px 0 auto;
+}
+
+.home-button:hover {
+  color: #D7D9D9
+}
+
+@media screen and (min-width: 500px){
+  .band {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1000px){
+  .band {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

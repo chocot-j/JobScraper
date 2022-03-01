@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chocotScrapper</title>
+  <script src="{{font_kit}}" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home_style.css') }}">
+</head>
+<body>
+  <section class="search-section">
+    <h1>
+      Find your <span class="highlight">Job</span>&<br>Increase your <span class="highlight">Value</span>
+    </h1>
+    <form action="/report" method="get" class="search-form">
+      <input placeholder="Search job" required name="word" />
+      <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+  </section>
+  <article id="explanation">
+    <p>
+      Are you looking for a job? Find your job on our site! We will give you a list of many jobs that are suitable for you.<br>This site refers to stackoverflow, weworkremotely and remoteok.
+    </p>
+  </article>
+  <section class="recent-src-section">
+    <h2>Recently Searched Jobs</h2>
+    {% if keys_len == 0 %}
+      <h1 id="no-recent-src">
+        There are no recent searches.<br>Try finding your job!
+      </h1>
+    {% else %}
+      <div class="band">
+        {% for key in searched_keys %}
+          <a href="/report?word={{key}}" class="key-link">
+            {{key}}
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </section>
+</body>
+</html>
